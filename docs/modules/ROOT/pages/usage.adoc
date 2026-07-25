@@ -1,0 +1,10 @@
+= Usage
+:description: info CLI examples.
+
+[source,shell]
+----
+./info                 # dir index / Top
+./info libc            # open a manual
+./info --dump tar      # plaintext dump
+./info --orient tar    # write orientation.sdl fragment to stdout
+----

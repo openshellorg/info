@@ -10,3 +10,5 @@
 !changelog-details/**
 !.github/
 !.github/**
+!docs/
+!docs/**

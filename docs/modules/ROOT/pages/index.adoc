@@ -1,0 +1,20 @@
+= Info TUI
+:description: Modern terminal UI for GNU Info manuals.
+
+A modern terminal UI for GNU Info manuals.
+Separate from xref:prohelp::index.adoc[prohelp] so it can be proposed upstream as an `info` replacement without dragging progressive-help / SDL into Texinfo politics.
+
+== Goals
+
+* Read installed `.info` files (and fall back to `man` when useful).
+* Clean Top chrome — suppress the noisy `File: … Node: Top` header on the dir/Top landing unless a manual was requested.
+* Prefer Overview / Description / Introduction content before Copyright / Copying / License.
+* Mouse-capable TUI via https://code.dlang.org/packages/opentui-d[opentui-d].
+* Non-TTY dump mode for pipes.
+* Emit short orientation SDL for xref:about::index.adoc[about] / `help --orient`.
+
+== See also
+
+* xref:prohelp::index.adoc[prohelp] — progressive CLI help + global `help`
+* xref:about::index.adoc[about] — machine orientation + `about <cmd>` cards
+* GNU Texinfo / classic `info`

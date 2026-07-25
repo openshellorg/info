@@ -1,0 +1,10 @@
+= Build
+:description: Build the info TUI with DUB.
+
+[source,shell]
+----
+dub build
+./info
+----
+
+Requires a D compiler (DMD or LDC) and https://dub.pm/[DUB].

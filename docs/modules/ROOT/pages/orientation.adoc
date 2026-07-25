@@ -1,0 +1,6 @@
+= Orientation SDL
+:description: Emit short orientation fragments for about and help --orient.
+
+`info --orient <topic>` writes a short orientation SDL fragment to stdout for consumption by xref:about::index.adoc[about] and the global `help --orient` path in xref:prohelp::index.adoc[prohelp].
+
+This keeps Info reading and progressive help as separate concerns while still sharing orientation cards.
