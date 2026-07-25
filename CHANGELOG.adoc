@@ -1,0 +1,6 @@
+= Changelog
+
+== 2026-07-25 — v0.1.0
+
+* Initial OpenShellOrg Info TUI: Info file reader, Top chrome cleanup, copyright demotion, OpenTUI viewport, `--dump` / `--orient` modes.
+* Details: link:changelog-details/2026-07-25%20-%20initial%20info%20tui.adoc[changelog-details].

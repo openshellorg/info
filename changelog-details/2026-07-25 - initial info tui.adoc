@@ -1,0 +1,9 @@
+= 2026-07-25 — Initial Info TUI
+
+First landing of `openshellorg/info`:
+
+* Parse Info node/menu structure from installed info paths.
+* TUI (opentui-d) with mouse enabled when a TTY is present.
+* Quiet Top/dir landing; full node chrome when a manual argument is given.
+* Prefer description-like nodes; demote Copyright/Copying/License to secondary.
+* `--dump` and `--orient` for pipes and shared orientation packs.

@@ -1,0 +1,13 @@
+{
+    "name": "info",
+    "description": "OpenShellOrg Info TUI — modern reader for GNU Info manuals (upstreamable info replacement)",
+    "authors": ["OpenShellOrg"],
+    "license": "MIT",
+    "homepage": "https://github.com/openshellorg/info",
+    "targetType": "executable",
+    "targetName": "info",
+    "dependencies": {
+        "opentui-d": "~>0.1.0"
+    },
+    "versions": ["InfoExecutable"]
+}

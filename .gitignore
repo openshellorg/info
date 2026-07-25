@@ -1,0 +1,12 @@
+*
+!.gitignore
+!README.adoc
+!CHANGELOG.adoc
+!LICENSE
+!dub.json
+!source/
+!source/**
+!changelog-details/
+!changelog-details/**
+!.github/
+!.github/**
