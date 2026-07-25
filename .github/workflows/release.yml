@@ -1,0 +1,111 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: 'Tag to release (e.g. v0.1.0); empty uses the pushed tag'
+        required: false
+        default: ''
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    name: Build (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: ubuntu-latest
+            suffix: linux
+          - os: windows-latest
+            suffix: windows
+          - os: macos-latest
+            suffix: macos
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup D compiler
+        uses: dlang-community/setup-dlang@v1
+        with:
+          compiler: ldc-latest
+
+      - name: Build
+        run: dub build --build=release
+
+      - name: Package
+        shell: bash
+        run: |
+          mkdir -p dist
+          if [ -f info.exe ]; then
+            cp info.exe dist/info-windows.exe
+          else
+            cp info "dist/info-${{ matrix.suffix }}"
+          fi
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: info-${{ matrix.suffix }}
+          path: dist/*
+
+  release:
+    name: Create GitHub Release
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Resolve version
+        id: ver
+        run: |
+          if [ -n "${{ github.event.inputs.tag }}" ]; then
+            TAG="${{ github.event.inputs.tag }}"
+          else
+            TAG="${GITHUB_REF_NAME}"
+          fi
+          VERSION="${TAG#v}"
+          echo "tag=$TAG" >> "$GITHUB_OUTPUT"
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+
+      - name: Download all artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: release-assets
+          merge-multiple: true
+
+      - name: Checksums
+        run: |
+          cd release-assets
+          sha256sum * > SHA256SUMS
+
+      - name: Create release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.ver.outputs.tag }}
+          name: info ${{ steps.ver.outputs.version }}
+          generate_release_notes: true
+          files: release-assets/*
+          body: |
+            ## info ${{ steps.ver.outputs.version }}
+
+            OpenShellOrg Info TUI — modern GNU Info reader.
+
+            ### Binaries
+
+            - Linux: `info-linux`
+            - Windows: `info-windows.exe`
+            - macOS: `info-macos`
+
+            TUI needs OpenTUI native libs beside the binary (see README). `--dump` / `--orient` work without them.
+
+            See [CHANGELOG.adoc](https://github.com/openshellorg/info/blob/main/CHANGELOG.adoc).
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

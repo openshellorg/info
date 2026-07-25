@@ -4,17 +4,32 @@ on:
   push:
     branches: [main]
   pull_request:
+  workflow_dispatch:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    name: Build (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+
     steps:
       - uses: actions/checkout@v4
-      - name: Install DUB / LDC
+
+      - name: Setup D compiler
         uses: dlang-community/setup-dlang@v1
         with:
           compiler: ldc-latest
+
       - name: Build
-        run: dub build
-      - name: Dump smoke
-        run: ./info --help && ./info --version
+        run: dub build --build=release
+
+      - name: Smoke
+        shell: bash
+        run: |
+          if [ -f info.exe ]; then BIN=./info.exe; else BIN=./info; fi
+          "$BIN" --help
+          "$BIN" --version
+          "$BIN" --dump 2>/dev/null || true
