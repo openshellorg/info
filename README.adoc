@@ -1,12 +1,35 @@
+ifndef::env-github[:icons: font]
+:toc: preamble
+:toclevels: 2
+:sectanchors:
+endif::[]
+
+ifndef::env-github[]
+image:https://img.shields.io/github/contributors/openshellorg/info.svg?style=for-the-badge[Contributors,link=https://github.com/openshellorg/info/graphs/contributors]
+image:https://img.shields.io/github/forks/openshellorg/info.svg?style=for-the-badge[Forks,link=https://github.com/openshellorg/info/network/members]
+image:https://img.shields.io/github/stars/openshellorg/info.svg?style=for-the-badge[Stars,link=https://github.com/openshellorg/info/stargazers]
+image:https://img.shields.io/github/issues/openshellorg/info.svg?style=for-the-badge[Issues,link=https://github.com/openshellorg/info/issues]
+image:https://img.shields.io/github/license/openshellorg/info.svg?style=for-the-badge[License,link=https://github.com/openshellorg/info/blob/main/LICENSE]
+endif::[]
+
+ifdef::env-github[]
+image:https://img.shields.io/github/contributors/openshellorg/info.svg?style=for-the-badge[Contributors]
+image:https://img.shields.io/github/forks/openshellorg/info.svg?style=for-the-badge[Forks]
+image:https://img.shields.io/github/stars/openshellorg/info.svg?style=for-the-badge[Stars]
+image:https://img.shields.io/github/issues/openshellorg/info.svg?style=for-the-badge[Issues]
+image:https://img.shields.io/github/license/openshellorg/info.svg?style=for-the-badge[License]
+endif::[]
+
 = info — OpenShellOrg Info TUI
-Open Shell Organization <https://github.com/openshellorg>
-v0.1.0, 2026-07-25
-:toc:
-:homepage: link:https://github.com/openshellorg/info[openshellorg/info]
+
+Modern GNU Info reader — upstreamable `info` replacement with a clean TUI.
+
+link:https://github.com/openshellorg/info/issues[Report Bug] ·
+link:https://github.com/openshellorg/info/issues[Request Feature]
+
+== About The Project
 
 A modern terminal UI for GNU Info manuals. Separate from link:https://github.com/openshellorg/prohelp[prohelp] so it can be proposed upstream as an `info` replacement without dragging progressive-help / SDL into Texinfo politics.
-
-== Goals
 
 * Read installed `.info` files (and fall back to `man` when useful).
 * Clean Top chrome — suppress the noisy `File: … Node: Top` header on the dir/Top landing unless a manual was requested.
@@ -15,11 +38,19 @@ A modern terminal UI for GNU Info manuals. Separate from link:https://github.com
 * Non-TTY dump mode for pipes.
 * Emit short orientation SDL for link:https://github.com/openshellorg/about[about] / `help --orient`.
 
-== Build
+== Installation
+
+Requires link:https://dlang.org/[D] and link:https://code.dlang.org/[dub].
 
 [source,shell]
 ----
 dub build
+----
+
+== Usage
+
+[source,shell]
+----
 ./info                 # dir index / Top
 ./info libc            # open a manual
 ./info --dump tar      # plaintext dump
@@ -32,10 +63,13 @@ dub build
 * link:https://github.com/openshellorg/about[about] — machine orientation + `about <cmd>` cards
 * GNU Texinfo / classic `info`
 
-== Changelog
-
-See link:CHANGELOG.adoc[CHANGELOG.adoc].
-
 == License
 
 MIT — see link:LICENSE[].
+
+== Contact
+
+Open Shell Org — openshell@devcentr.org
+
+* Project: https://github.com/openshellorg/info
+* Site: https://openshellorg.github.io
