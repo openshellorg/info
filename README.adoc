@@ -2,21 +2,42 @@ ifndef::env-github[:icons: font]
 :toc: preamble
 :toclevels: 2
 :sectanchors:
+
+ifdef::env-github[]
+++++
+<a id="readme-top"></a>
+<div align="center">
+<a href="https://github.com/openshellorg/info/graphs/contributors"><img src="https://img.shields.io/github/contributors/openshellorg/info.svg?style=for-the-badge" alt="Contributors"></a>
+<a href="https://github.com/openshellorg/info/network/members"><img src="https://img.shields.io/github/forks/openshellorg/info.svg?style=for-the-badge" alt="Forks"></a>
+<a href="https://github.com/openshellorg/info/stargazers"><img src="https://img.shields.io/github/stars/openshellorg/info.svg?style=for-the-badge" alt="Stars"></a>
+<a href="https://github.com/openshellorg/info/issues"><img src="https://img.shields.io/github/issues/openshellorg/info.svg?style=for-the-badge" alt="Issues"></a>
+<a href="https://github.com/openshellorg/info/blob/main/LICENSE"><img src="https://img.shields.io/github/license/openshellorg/info.svg?style=for-the-badge" alt="License"></a>
+<br />
+<h3 align="center">info – Open ShellOrg Info TUI</h3>
+<p align="center">
+Modern GNU Info reader — upstreamable `info` replacement with a clean TUI.<br />
+<a href="https://github.com/openshellorg/info/issues">Report Bug</a>
+&middot;
+<a href="https://github.com/openshellorg/info/issues">Request Feature</a>
+</p>
+</div>
+++++
 endif::[]
 
-[[readme-top]]
+ifndef::env-github[]
 image:https://img.shields.io/github/contributors/openshellorg/info.svg?style=for-the-badge[Contributors,link=https://github.com/openshellorg/info/graphs/contributors]
 image:https://img.shields.io/github/forks/openshellorg/info.svg?style=for-the-badge[Forks,link=https://github.com/openshellorg/info/network/members]
 image:https://img.shields.io/github/stars/openshellorg/info.svg?style=for-the-badge[Stars,link=https://github.com/openshellorg/info/stargazers]
 image:https://img.shields.io/github/issues/openshellorg/info.svg?style=for-the-badge[Issues,link=https://github.com/openshellorg/info/issues]
 image:https://img.shields.io/github/license/openshellorg/info.svg?style=for-the-badge[License,link=https://github.com/openshellorg/info/blob/main/LICENSE]
 
-= info — OpenShellOrg Info TUI
+= info – Open ShellOrg Info TUI
 
 Modern GNU Info reader — upstreamable `info` replacement with a clean TUI.
 
 link:https://github.com/openshellorg/info/issues[Report Bug] ·
 link:https://github.com/openshellorg/info/issues[Request Feature]
+endif::[]
 
 == About The Project
 
@@ -29,8 +50,9 @@ A modern terminal UI for GNU Info manuals. Separate from link:https://github.com
 * Non-TTY dump mode for pipes.
 * Emit short orientation SDL for link:https://github.com/openshellorg/about[about] / `help --orient`.
 
-link:#readme-top[back to top]
-
+++++
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+++++
 == Installation
 
 Requires link:https://dlang.org/[D] and link:https://code.dlang.org/[dub].
@@ -40,8 +62,9 @@ Requires link:https://dlang.org/[D] and link:https://code.dlang.org/[dub].
 dub build
 ----
 
-link:#readme-top[back to top]
-
+++++
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+++++
 == Usage
 
 [source,shell]
@@ -52,8 +75,9 @@ link:#readme-top[back to top]
 ./info --orient tar    # write orientation.sdl fragment to stdout
 ----
 
-link:#readme-top[back to top]
-
+++++
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+++++
 == See also
 
 * link:https://github.com/openshellorg/prohelp[prohelp] — progressive CLI help + global `help`
@@ -64,8 +88,9 @@ link:#readme-top[back to top]
 
 MIT — see link:LICENSE[].
 
-link:#readme-top[back to top]
-
+++++
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+++++
 == Contact
 
 Open Shell Org — openshell@devcentr.org
@@ -73,4 +98,6 @@ Open Shell Org — openshell@devcentr.org
 * Project: https://github.com/openshellorg/info
 * Site: https://openshellorg.github.io
 
-link:#readme-top[back to top]
+++++
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+++++
