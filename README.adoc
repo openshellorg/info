@@ -4,21 +4,12 @@ ifndef::env-github[:icons: font]
 :sectanchors:
 endif::[]
 
-ifndef::env-github[]
+[[readme-top]]
 image:https://img.shields.io/github/contributors/openshellorg/info.svg?style=for-the-badge[Contributors,link=https://github.com/openshellorg/info/graphs/contributors]
 image:https://img.shields.io/github/forks/openshellorg/info.svg?style=for-the-badge[Forks,link=https://github.com/openshellorg/info/network/members]
 image:https://img.shields.io/github/stars/openshellorg/info.svg?style=for-the-badge[Stars,link=https://github.com/openshellorg/info/stargazers]
 image:https://img.shields.io/github/issues/openshellorg/info.svg?style=for-the-badge[Issues,link=https://github.com/openshellorg/info/issues]
 image:https://img.shields.io/github/license/openshellorg/info.svg?style=for-the-badge[License,link=https://github.com/openshellorg/info/blob/main/LICENSE]
-endif::[]
-
-ifdef::env-github[]
-image:https://img.shields.io/github/contributors/openshellorg/info.svg?style=for-the-badge[Contributors]
-image:https://img.shields.io/github/forks/openshellorg/info.svg?style=for-the-badge[Forks]
-image:https://img.shields.io/github/stars/openshellorg/info.svg?style=for-the-badge[Stars]
-image:https://img.shields.io/github/issues/openshellorg/info.svg?style=for-the-badge[Issues]
-image:https://img.shields.io/github/license/openshellorg/info.svg?style=for-the-badge[License]
-endif::[]
 
 = info — OpenShellOrg Info TUI
 
@@ -38,6 +29,8 @@ A modern terminal UI for GNU Info manuals. Separate from link:https://github.com
 * Non-TTY dump mode for pipes.
 * Emit short orientation SDL for link:https://github.com/openshellorg/about[about] / `help --orient`.
 
+link:#readme-top[back to top]
+
 == Installation
 
 Requires link:https://dlang.org/[D] and link:https://code.dlang.org/[dub].
@@ -46,6 +39,8 @@ Requires link:https://dlang.org/[D] and link:https://code.dlang.org/[dub].
 ----
 dub build
 ----
+
+link:#readme-top[back to top]
 
 == Usage
 
@@ -57,6 +52,8 @@ dub build
 ./info --orient tar    # write orientation.sdl fragment to stdout
 ----
 
+link:#readme-top[back to top]
+
 == See also
 
 * link:https://github.com/openshellorg/prohelp[prohelp] — progressive CLI help + global `help`
@@ -67,9 +64,13 @@ dub build
 
 MIT — see link:LICENSE[].
 
+link:#readme-top[back to top]
+
 == Contact
 
 Open Shell Org — openshell@devcentr.org
 
 * Project: https://github.com/openshellorg/info
 * Site: https://openshellorg.github.io
+
+link:#readme-top[back to top]
