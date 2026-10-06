@@ -12,3 +12,5 @@
 !.github/**
 !docs/
 !docs/**
+!/.editorconfig
+!/.gitattributes
